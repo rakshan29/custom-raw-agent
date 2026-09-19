@@ -7,9 +7,10 @@ from google import genai
 
 client=genai.Client()
 
-response = client.models.generate_content(
-	model="gemini-3.8-flash",
-	contents="Explain how AI works in a few words"
+chat = client.chats.create(model="gemini-3.6-flash")
+
+response = chat.send_message("Explain how AI works in a few words"
 )
+
 print(response.text)
 
