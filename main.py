@@ -9,7 +9,9 @@ client=genai.Client()
 
 chat = client.chats.create(model="gemini-3.6-flash")
 
-response = chat.send_message("Explain how AI works in a few words")
+# Ask anything anytime inside the chat.send_message("....")
+
+response = chat.send_message("Explain Onepiece")
 
 print(response.text)
 
