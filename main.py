@@ -10,11 +10,10 @@ client=genai.Client()
 
 chat = client.chats.create(model="gemini-3.6-flash")
 
-# Ask anything anytime inside chat.send_message("....")
-response = chat.send_message_stream("Explain Onepiece")
+# Giving input as data / information
+response1 = chat.send_message("I have 2 computers in my house.")
+print("Response 1:", response1.text)
 
-# Iterate through text chunks as they arrive from Google's servers
-# Human reading sychronization, Real-Time Feedback & Cancellation
-for chunk in response:
-	print(chunk.text,end="",flush=True)
-print()
+# Ask question regarding the input data given 
+response2 = chat.send_message("How many computers are in my house?")
+print("Response 2:", response2.text)
